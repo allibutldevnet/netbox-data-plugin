@@ -1,12 +1,11 @@
-from extras.plugins import PluginConfig
-from .version import __version__
+from netbox.plugins import PluginConfig
 
 class NetboxDataConfig(PluginConfig):
     name = 'netbox_data'
     verbose_name = 'Netbox Data'
-    description = 'Get Netbox Data'
-    version = __version__
+    description = 'Get netbox data'
+    version = '0.1'
     base_url = 'netbox-data'
-    min_version = '3.4.0'
+    min_version = '4.0.9'
 
 config = NetboxDataConfig
