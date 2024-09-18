@@ -10,11 +10,7 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        ('dcim', '0190_nested_modules'),
-        ('extras', '0121_customfield_related_object_filter'),
-        ('ipam', '0070_vlangroup_vlan_id_ranges'),
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
