@@ -4,7 +4,7 @@ class NetboxDataConfig(PluginConfig):
     name = 'netbox_data'
     verbose_name = 'Netbox Data'
     description = 'Get netbox data'
-    version = '0.1'
+    version = '1.0.2'
     base_url = 'netbox-data'
     min_version = '4.0.9'
 
