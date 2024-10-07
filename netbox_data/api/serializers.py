@@ -19,6 +19,7 @@ class DeviceInfoSerializer(NetBoxModelSerializer):
         model = DeviceInfo
         fields = ('id', 'url', 'site', 'device', 'device_setup_type', 'remote_config', 'results',
             'created', 'last_updated',)
+        brief_fields = ('id','url','site','device','device_setup_type','results')
     
     def __init__(self, *args, **kwargs):
         kwargs['partial'] = True
@@ -36,6 +37,7 @@ class DeviceInfoAPISerializer(NetBoxModelSerializer):
         model = DeviceInfo
         fields = ('id', 'url', 'site_name', 'device_name', 'device_setup_type', 'remote_config', 'results',
             'created', 'last_updated',)
+        brief_fields = ('id','url','site','device','device_setup_type','results')
     
     def __init__(self, *args, **kwargs):
         kwargs['partial'] = True
@@ -75,6 +77,7 @@ class VlanInfoSerializer(NetBoxModelSerializer):
     class Meta:
         model = VlanInfo
         fields = ('id', 'url', 'site', 'vlan', 'results', 'created', 'last_updated',)
+        brief_fields = ('id','url','site','vlan','results')
     
     def __init__(self, *args, **kwargs):
         kwargs['partial'] = True
@@ -91,6 +94,7 @@ class VlanInfoAPISerializer(NetBoxModelSerializer):
     class Meta:
         model = VlanInfo
         fields = ('id', 'url', 'site_name', 'vlan_vid', 'results', 'created', 'last_updated',)
+        brief_fields = ('id','url','site','vlan_vid','results')
     
     def __init__(self, *args, **kwargs):
         kwargs['partial'] = True
