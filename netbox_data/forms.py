@@ -3,6 +3,8 @@ from ipam.models import VLAN
 from django import forms
 from django.forms import ModelForm
 from netbox.forms import NetBoxModelFilterSetForm, NetBoxModelForm
+from django.utils.translation import gettext_lazy as _
+from utilities.forms.rendering import FieldSet
 
 from .models import DeviceInfo, VlanInfo
 from .utilities import fetchDeviceInfo, fetchVlanInfo
@@ -49,6 +51,11 @@ class DeviceInfoFilterForm(NetBoxModelFilterSetForm):
     results = forms.JSONField(
         required=False
     )
+    fieldSets = (
+        FieldSet('site', name=_('Site')),
+        FieldSet('device','device_setup_type', name=_('Device Info')),
+        FieldSet('remote_config', name=_('Config')),
+    )
 
 
 class VlanInfoForm(ModelForm):
@@ -77,4 +84,7 @@ class VlanInfoFilterForm(NetBoxModelFilterSetForm):
     )
     results = forms.JSONField(
         required=False
+    )
+    fieldsets = (
+        FieldSet('site','vlan', name=_('Vlan Info')),
     )
